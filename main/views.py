@@ -102,10 +102,12 @@ def views_detect_from_camera(request):
     global text_from_camera, type_from_camera
     frames = video_streaming()
 
-    if request.is_ajax():
-        print('ajax request received')
+    # Check if the request is an AJAX request
+    if request.headers.get('x-requested-with') == 'XMLHttpRequest':
+        print('AJAX request received')
         time_stamp = str(datetime.now().strftime("%d-%m-%y"))
         image = os.path.join(os.getcwd(), "media", "images", f"img_{time_stamp}.png")
+
         if os.path.exists(image):
             im = Image.open(image)
 
@@ -121,6 +123,7 @@ def views_detect_from_camera(request):
             return JsonResponse(data={'text_from_camera': None})
 
     else:
+        # Handle non-AJAX requests
         return StreamingHttpResponse(frames, content_type='multipart/x-mixed-replace; boundary=frame')
 
 

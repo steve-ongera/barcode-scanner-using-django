@@ -60,16 +60,16 @@ WSGI_APPLICATION = 'barcodescannerwebapp.wsgi.application'
 DATABASES = {
     'default': {
         # OPTION 1
-        # 'ENGINE': 'django.db.backends.sqlite3',
-        # 'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
 
-        # OPTION 2
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'd653l0k1d2pggs',
-        'USER': 'gxqdcmsmydjkhe',
-        'PASSWORD': '2ecb2e190b23bc98c4dbd1f29539db64cc049539e69e2db595dbfaccb65c34bd',
-        'HOST': 'ec2-3-224-184-9.compute-1.amazonaws.com',
-        'PORT': '5432',
+        # # OPTION 2
+        # 'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        # 'NAME': 'd653l0k1d2pggs',
+        # 'USER': 'gxqdcmsmydjkhe',
+        # 'PASSWORD': '2ecb2e190b23bc98c4dbd1f29539db64cc049539e69e2db595dbfaccb65c34bd',
+        # 'HOST': 'ec2-3-224-184-9.compute-1.amazonaws.com',
+        # 'PORT': '5432',
     }
 }
 
